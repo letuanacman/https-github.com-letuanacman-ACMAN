@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MasterModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="SERVER_HOADON_DIENTU">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_KH" Type="bigint" />
+          <Property Name="MAU_HOADON" Type="nvarchar" MaxLength="15" />
+          <Property Name="KYHIEU_HOADON" Type="nvarchar" MaxLength="15" />
+          <Property Name="TU_SO" Type="bigint" />
+          <Property Name="DEN_SO" Type="bigint" />
+          <Property Name="NGAY_KY" Type="smalldatetime" />
+          <Property Name="NGAY_APDUNG" Type="smalldatetime" />
+          <Property Name="MA_BQ" Type="nvarchar" MaxLength="20" />
+          <Property Name="NOI_DUNG" Type="nvarchar" MaxLength="250" />
+          <Property Name="SO_THONGBAO" Type="nvarchar" MaxLength="25" />
+          <Property Name="NGAY_HOPDONG" Type="smalldatetime" />
+          <Property Name="MAU_SO" Type="smallint" />
+          <Property Name="NGAY_CAPNHAT" Type="smalldatetime" />
+          <Property Name="PHIEN_BAN" Type="nvarchar" MaxLength="10" />
+          <Property Name="DUYET" Type="bit" />
+          <Property Name="SU_DUNG" Type="bit" />
+        </EntityType>
+        <EntityType Name="SERVER_ONLINE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SERVER" Type="nvarchar" MaxLength="50" />
+          <Property Name="TEN_DATA" Type="nvarchar" MaxLength="50" />
+          <Property Name="USER_NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="PASSWORD" Type="nvarchar" MaxLength="50" />
+          <Property Name="NGAY_BD" Type="smalldatetime" />
+          <Property Name="NGAY_HH" Type="smalldatetime" />
+          <Property Name="SOLUONG_USER" Type="int" />
+          <Property Name="PHAN_MEM" Type="nvarchar" MaxLength="50" />
+          <Property Name="BQ_DATA" Type="nvarchar" MaxLength="40" />
+          <Property Name="THONG_TU" Type="smallint" />
+          <Property Name="TEN_CONGTY" Type="nvarchar" MaxLength="200" />
+          <Property Name="MST" Type="nvarchar" MaxLength="15" />
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="70" />
+          <Property Name="TEL" Type="nvarchar" MaxLength="50" />
+          <Property Name="DAI_DIEN" Type="nvarchar" MaxLength="50" />
+          <Property Name="DIA_CHI" Type="nvarchar" MaxLength="250" />
+          <Property Name="TONG_TIEN" Type="float" />
+          <Property Name="GHI_CHU" Type="nvarchar" MaxLength="150" />
+          <Property Name="SU_DUNG" Type="bit" />
+          <Property Name="DATE_CREATE" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="USER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PARENT_ID" Type="bigint" />
+          <Property Name="HO_TEN" Type="nvarchar" MaxLength="70" />
+          <Property Name="USER_NAME" Type="nvarchar" MaxLength="30" />
+          <Property Name="PASSWORD" Type="nvarchar" MaxLength="50" />
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="70" />
+          <Property Name="TEL" Type="nvarchar" MaxLength="50" />
+          <Property Name="ROLE_ID" Type="tinyint" />
+          <Property Name="SU_DUNG" Type="smallint" />
+          <Property Name="MA_ID" Type="nvarchar" MaxLength="40" />
+          <Property Name="CAP_ID" Type="tinyint" />
+        </EntityType>
+        <EntityContainer Name="MasterModelStoreContainer">
+          <EntitySet Name="SERVER_HOADON_DIENTU" EntityType="Self.SERVER_HOADON_DIENTU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SERVER_ONLINE" EntityType="Self.SERVER_ONLINE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USER" EntityType="Self.USER" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MasterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="SERVER_HOADON_DIENTU">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_KH" Type="Int64" />
+          <Property Name="MAU_HOADON" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="KYHIEU_HOADON" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="TU_SO" Type="Int64" />
+          <Property Name="DEN_SO" Type="Int64" />
+          <Property Name="NGAY_KY" Type="DateTime" Precision="0" />
+          <Property Name="NGAY_APDUNG" Type="DateTime" Precision="0" />
+          <Property Name="MA_BQ" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="NOI_DUNG" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="SO_THONGBAO" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="NGAY_HOPDONG" Type="DateTime" Precision="0" />
+          <Property Name="MAU_SO" Type="Int16" />
+          <Property Name="NGAY_CAPNHAT" Type="DateTime" Precision="0" />
+          <Property Name="PHIEN_BAN" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="DUYET" Type="Boolean" />
+          <Property Name="SU_DUNG" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="SERVER_ONLINE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SERVER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TEN_DATA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="USER_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NGAY_BD" Type="DateTime" Precision="0" />
+          <Property Name="NGAY_HH" Type="DateTime" Precision="0" />
+          <Property Name="SOLUONG_USER" Type="Int32" />
+          <Property Name="PHAN_MEM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BQ_DATA" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="THONG_TU" Type="Int16" />
+          <Property Name="TEN_CONGTY" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="MST" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="TEL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DAI_DIEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DIA_CHI" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="TONG_TIEN" Type="Double" />
+          <Property Name="GHI_CHU" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="SU_DUNG" Type="Boolean" />
+          <Property Name="DATE_CREATE" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="USER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PARENT_ID" Type="Int64" />
+          <Property Name="HO_TEN" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="USER_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="TEL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ROLE_ID" Type="Byte" />
+          <Property Name="SU_DUNG" Type="Int16" />
+          <Property Name="MA_ID" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="CAP_ID" Type="Byte" />
+        </EntityType>
+        <EntityContainer Name="MasterDbcontex" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="SERVER_HOADON_DIENTU" EntityType="Self.SERVER_HOADON_DIENTU" />
+          <EntitySet Name="SERVER_ONLINE" EntityType="Self.SERVER_ONLINE" />
+          <EntitySet Name="USERs" EntityType="Self.USER" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MasterModelStoreContainer" CdmEntityContainer="MasterDbcontex">
+          <EntitySetMapping Name="SERVER_HOADON_DIENTU">
+            <EntityTypeMapping TypeName="MasterModel.SERVER_HOADON_DIENTU">
+              <MappingFragment StoreEntitySet="SERVER_HOADON_DIENTU">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ID_KH" ColumnName="ID_KH" />
+                <ScalarProperty Name="MAU_HOADON" ColumnName="MAU_HOADON" />
+                <ScalarProperty Name="KYHIEU_HOADON" ColumnName="KYHIEU_HOADON" />
+                <ScalarProperty Name="TU_SO" ColumnName="TU_SO" />
+                <ScalarProperty Name="DEN_SO" ColumnName="DEN_SO" />
+                <ScalarProperty Name="NGAY_KY" ColumnName="NGAY_KY" />
+                <ScalarProperty Name="NGAY_APDUNG" ColumnName="NGAY_APDUNG" />
+                <ScalarProperty Name="MA_BQ" ColumnName="MA_BQ" />
+                <ScalarProperty Name="NOI_DUNG" ColumnName="NOI_DUNG" />
+                <ScalarProperty Name="SO_THONGBAO" ColumnName="SO_THONGBAO" />
+                <ScalarProperty Name="NGAY_HOPDONG" ColumnName="NGAY_HOPDONG" />
+                <ScalarProperty Name="MAU_SO" ColumnName="MAU_SO" />
+                <ScalarProperty Name="NGAY_CAPNHAT" ColumnName="NGAY_CAPNHAT" />
+                <ScalarProperty Name="PHIEN_BAN" ColumnName="PHIEN_BAN" />
+                <ScalarProperty Name="DUYET" ColumnName="DUYET" />
+                <ScalarProperty Name="SU_DUNG" ColumnName="SU_DUNG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SERVER_ONLINE">
+            <EntityTypeMapping TypeName="MasterModel.SERVER_ONLINE">
+              <MappingFragment StoreEntitySet="SERVER_ONLINE">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SERVER" ColumnName="SERVER" />
+                <ScalarProperty Name="TEN_DATA" ColumnName="TEN_DATA" />
+                <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="NGAY_BD" ColumnName="NGAY_BD" />
+                <ScalarProperty Name="NGAY_HH" ColumnName="NGAY_HH" />
+                <ScalarProperty Name="SOLUONG_USER" ColumnName="SOLUONG_USER" />
+                <ScalarProperty Name="PHAN_MEM" ColumnName="PHAN_MEM" />
+                <ScalarProperty Name="BQ_DATA" ColumnName="BQ_DATA" />
+                <ScalarProperty Name="THONG_TU" ColumnName="THONG_TU" />
+                <ScalarProperty Name="TEN_CONGTY" ColumnName="TEN_CONGTY" />
+                <ScalarProperty Name="MST" ColumnName="MST" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="TEL" ColumnName="TEL" />
+                <ScalarProperty Name="DAI_DIEN" ColumnName="DAI_DIEN" />
+                <ScalarProperty Name="DIA_CHI" ColumnName="DIA_CHI" />
+                <ScalarProperty Name="TONG_TIEN" ColumnName="TONG_TIEN" />
+                <ScalarProperty Name="GHI_CHU" ColumnName="GHI_CHU" />
+                <ScalarProperty Name="SU_DUNG" ColumnName="SU_DUNG" />
+                <ScalarProperty Name="DATE_CREATE" ColumnName="DATE_CREATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USERs">
+            <EntityTypeMapping TypeName="MasterModel.USER">
+              <MappingFragment StoreEntitySet="USER">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PARENT_ID" ColumnName="PARENT_ID" />
+                <ScalarProperty Name="HO_TEN" ColumnName="HO_TEN" />
+                <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="TEL" ColumnName="TEL" />
+                <ScalarProperty Name="ROLE_ID" ColumnName="ROLE_ID" />
+                <ScalarProperty Name="SU_DUNG" ColumnName="SU_DUNG" />
+                <ScalarProperty Name="MA_ID" ColumnName="MA_ID" />
+                <ScalarProperty Name="CAP_ID" ColumnName="CAP_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
